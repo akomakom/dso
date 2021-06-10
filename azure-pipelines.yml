@@ -27,5 +27,5 @@ jobs:
   - template: build-templates/maven-common.yml@templates
     parameters:
       jobName: Linux_Java_8
-      options: -B -Djava.test.version=1.8 -Djava.test.vendor=zulu -Pfullmode,check-short -Dsag-deps=true 
+      options: -B -Djava.test.version=1.8 -Djava.test.vendor=zulu -Pfullmode,check-short -Dsag-deps=true -DskipCheckstyle -DskipJavadoc
       mavenGoals: 'clean install' # verify won't work because of funky poms
