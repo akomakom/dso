@@ -104,7 +104,7 @@ The Initial Developer of the Covered Software is
                 <scripts>
                   <script><![CDATA[
                         new org.reflections.Reflections(["com", "org", "net"])
-                            .save("${project.build.outputDirectory}/META-INF/reflections/${project.artifactId}-reflections.xml")
+                            .save("${project.build.directory}/reflections.xml")
                     ]]></script>
                 </scripts>
               </configuration>
