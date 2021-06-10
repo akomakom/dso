@@ -103,7 +103,7 @@ The Initial Developer of the Covered Software is
               <configuration>
                 <scripts>
                   <script><![CDATA[
-                        new org.reflections.Reflections(["com.tc", "org.terracotta", "net.sf"])
+                        new org.reflections.Reflections(["com", "org", "net"])
                             .save("${project.build.outputDirectory}/META-INF/reflections/${project.artifactId}-reflections.xml")
                     ]]></script>
                 </scripts>
