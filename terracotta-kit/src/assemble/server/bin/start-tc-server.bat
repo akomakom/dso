@@ -54,12 +54,16 @@ for %%C in ("\bin\java -d64 -server -XX:MaxDirectMemorySize=9223372036854775807"
   )
 )
 
+if not defined JAVA_MEMORY_OPTS (
+ set JAVA_MEMORY_OPTS=-Xms2g -Xmx2g
+)
+
 rem rmi.dgc.server.gcInterval is set an year to avoid system gc in case authentication is enabled
 rem users may change it accordingly
 
 :found_command
 set CLASSPATH=%TC_INSTALL_DIR%\server\lib\tc.jar
-set OPTS=%SERVER_OPT% -Xms2g -Xmx2g -XX:+HeapDumpOnOutOfMemoryError
+set OPTS=%SERVER_OPT% %JAVA_MEMORY_OPTS% -XX:+HeapDumpOnOutOfMemoryError
 set OPTS=%OPTS% -Dcom.sun.management.jmxremote
 set OPTS=%OPTS% -Dsun.rmi.dgc.server.gcInterval=31536000000
 set OPTS=%OPTS% -Dtc.install-root=%TC_INSTALL_DIR%
