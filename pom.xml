@@ -129,6 +129,7 @@ The Initial Developer of the Covered Software is
         </file>
       </activation>
       <modules>
+        <module>../system-tests-parent-ee</module>
         <module>../build-parent-ee</module>
         <module>../ent-common</module>
         <module>../ent-dso-l1</module>
